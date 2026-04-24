@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════════
 
 // UPDATE THIS to your deployed backend URL before deploying frontend
-const API_URL = 'http://localhost:3000/bfhl';
+const API_URL = 'https://bfhl-node-hierarchy-visualizer.onrender.com/bfhl';
 
 // ─── DOM refs ───────────────────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
