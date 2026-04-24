@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BFHL Node Hierarchy Visualizer — Parse directed edges into tree hierarchies with cycle detection">
+  <title>BFHL Node Hierarchy Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="hdr">
+      <div class="badge-top">⬡ Bajaj Finserv Health</div>
+      <h1>Node Hierarchy Visualizer</h1>
+      <p>Parse directed edges into tree hierarchies with cycle &amp; duplicate detection</p>
+    </header>
+
+    <!-- Input Panel -->
+    <div class="panel" id="input-panel">
+      <label for="data-input">JSON Array Input</label>
+      <textarea id="data-input" placeholder='["A->B", "A->C", "B->D", "C->E", "E->F", "hello", "G->H", "G->H"]'></textarea>
+      <div class="actions">
+        <button class="btn btn-p" id="submit-btn" onclick="handleSubmit()">
+          <span>▶</span> Analyze Hierarchy
+        </button>
+        <button class="btn btn-g" onclick="loadExample()">Load Example</button>
+        <span class="hint">Paste a JSON array of edge strings</span>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loader" id="loader">
+      <div class="track"><div class="fill"></div></div>
+      <div class="lt">Processing hierarchy…</div>
+    </div>
+
+    <!-- Error -->
+    <div class="err" id="error">
+      <span>✕</span>
+      <span id="error-text">API call failed. Check console.</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <!-- User Info -->
+      <div class="uinfo" id="uinfo"></div>
+
+      <!-- Summary Bar -->
+      <div class="sbar" id="summary-bar"></div>
+
+      <!-- Hierarchies -->
+      <div class="sec" id="hier-sec">
+        <div class="sec-t">
+          <span>🌳</span> Hierarchies <span class="sec-c" id="hier-count">0</span>
+        </div>
+        <div class="tgrid" id="hier-grid"></div>
+      </div>
+
+      <!-- Invalid Entries -->
+      <div class="sec" id="inv-sec" style="display:none">
+        <div class="sec-t">
+          <span>🚫</span> Invalid Entries <span class="sec-c" id="inv-count">0</span>
+        </div>
+        <div class="pills" id="inv-list"></div>
+      </div>
+
+      <!-- Duplicate Edges -->
+      <div class="sec" id="dup-sec" style="display:none">
+        <div class="sec-t">
+          <span>♻</span> Duplicate Edges <span class="sec-c" id="dup-count">0</span>
+        </div>
+        <div class="pills" id="dup-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
