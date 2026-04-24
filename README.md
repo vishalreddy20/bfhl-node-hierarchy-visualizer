@@ -6,8 +6,8 @@ A production-grade full stack application that parses directed edge strings into
 
 | Service  | URL |
 |----------|-----|
-| **API**  | `https://your-render-url.onrender.com/bfhl` |
-| **Frontend** | `https://your-vercel-url.vercel.app` |
+| **API**  | `https://bfhl-node-hierarchy-visualizer.onrender.com/bfhl` |
+| **Frontend** | `https://bfhl-node-hierarchy-visualizer.vercel.app` |
 
 > Update these after deployment.
 
